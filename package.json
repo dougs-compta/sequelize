@@ -1,7 +1,7 @@
 {
-  "name": "sequelize",
-  "description": "Multi dialect ORM for Node.JS",
-  "version": "0.0.0-development",
+  "name": "dougs-sequelize",
+  "description": "Sequelize Dougs Fork (it is not meant to replace sequelize)",
+  "version": "5.10.1",
   "author": "Sascha Depold <sascha@depold.com>",
   "contributors": [
     "Sascha Depold <sascha@depold.com>",
