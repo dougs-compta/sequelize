@@ -1,7 +1,8 @@
 'use strict';
 
 /* jshint -W030 */
-var chai = require('chai')
+var _ = require('lodash')
+  , chai = require('chai')
   , expect = chai.expect
   , Support   = require(__dirname + '/../support')
   , DataTypes = require(__dirname + '/../../../lib/data-types')
@@ -27,8 +28,16 @@ describe(Support.getTestDialectTeaser('Instance'), function () {
       expect(instance.previous('text')).to.be.not.ok;
       expect(instance.previous('textCustom')).to.be.not.ok;
 
+      instance._previousDataValues = _.clone(instance.dataValues);
+
       instance.set('text', 'b');
       instance.set('textCustom', 'def');
+
+      expect(instance.previous('text')).to.be.equal('a');
+      expect(instance.previous('textCustom')).to.be.equal('abc');
+
+      instance.set('text', 'c');
+      instance.set('textCustom', 'oth');
 
       expect(instance.previous('text')).to.be.equal('a');
       expect(instance.previous('textCustom')).to.be.equal('abc');

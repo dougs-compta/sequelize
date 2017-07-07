@@ -7,3 +7,4 @@ README.md
 changelog.md
 Makefile
 coverage*
+package-lock.json

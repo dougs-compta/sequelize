@@ -14,3 +14,4 @@ site
 docs/api/tmp.md
 ssce.js
 .vscode/
+package-lock.json
